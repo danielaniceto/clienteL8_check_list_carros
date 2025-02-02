@@ -6,7 +6,7 @@ class DataBaseConnection():
         url_connection = "mongodb+srv://daniel_l8:1234@cluster0.s5jlp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
         try:
-            logging.info("Conectando ao banco de dados")
+            logging.info("Conectando ao banco de dados!!")
 
             client = MongoClient(url_connection, serverSelectionTimeoutMS=5000)
             db = client["projeto_l8"]
