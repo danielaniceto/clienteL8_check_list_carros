@@ -1,5 +1,4 @@
-from pydantic import BaseModel, Field, HttpUrl
-from typing import Optional
+from pydantic import BaseModel, Field
 import logging
 
 logging.baseConfig(level=logging.INFO)
