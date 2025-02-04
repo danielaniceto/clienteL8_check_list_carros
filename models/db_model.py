@@ -28,3 +28,9 @@ class RequestModel(BaseModel):
     rack_escada: str
     estado_geral: str
     descricao_varias: str
+
+class UserModel(BaseModel):
+    user_id: str = uuid4().hex
+    user_email: str
+    user_password: str
+    
