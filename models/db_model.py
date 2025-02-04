@@ -19,7 +19,7 @@ class RequestModel(BaseModel):
     chave_roda: str
     retrovisor: str
     tag_sem_parar: str
-    angulo_sinalizacao: str
+    triangulo_sinalizacao: str
     vidros: str
     macaco: str
     funcionamento_geral: str
@@ -27,4 +27,4 @@ class RequestModel(BaseModel):
     esguicho_agua: str
     rack_escada: str
     estado_geral: str
-    varias: str
+    descricao_varias: str
