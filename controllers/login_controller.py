@@ -33,5 +33,3 @@ class LoginController:
         
         else:
             raise HTTPException(status_code=401, detail="Usuário ou senha inválidos")
-
-        

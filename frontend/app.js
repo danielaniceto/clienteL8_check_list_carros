@@ -1,35 +1,23 @@
-const app = document.getElementById("app");
-
-const formHTML = `
-    <form id="login-form">
-        <h2>Login</h2>
-        <label>Usuário:</label><br>
-        <input type="text" id="username" placeholder="Digite seu usuário"><br><br>
-        <label>Senha:</label><br>
-        <input type="password" id="password" placeholder="Digite sua senha"><br><br>
-        <button type="button" id="login-btn">Entrar</button>
-    </form>
-`;
-
-app.innerHTML = formHTML;
-
-document.getElementById("login-btn").addEventListener("click", async () => {
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-
-    if (username && password) {
-        const response = await fetch("http://localhost:8000/api/login", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ username, password }),
-        });
-
-        if (response.ok) {
-            alert("Login feito com sucesso!");
-        } else {
-            alert("Credenciais inválidas!");
-        }
+document.getElementById('loginForm').addEventListener('submit', async (event) => {
+    event.preventDefault();
+  
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+  
+    const response = await fetch('http://localhost:8000/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ username, password })
+    });
+  
+    if (response.ok) {
+      const data = await response.json();
+      alert(data.message);
+      //redirecionamento
+      window.location.href = "/checklist.html";
     } else {
-        alert("Preencha os campos!");
+      alert("Invalid credentials");
     }
-});
+  });  
